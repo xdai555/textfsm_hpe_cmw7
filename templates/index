@@ -1,0 +1,12 @@
+# First line is the header fields for columns and is mandatory.
+# Regular expressions are supported in all fields except the first.
+# Last field supports variable length command completion.
+# abc[[xyz]] is expanded to abc(x(y(z)?)?)?, regexp inside [[]] is not supported
+#
+Template, Hostname, Vendor, Command
+hp_comware_display_lldp_neighbor-information_verbose.textfsm, .*, hp_comware, di[[splay]] ll[[dp]] n[[eighbor-information]] v[[erbose]]
+hp_comware_display_counters_bound_interface.textfsm, .*, hp_comware, di[[splay]] cou[[nters]] (\S+) i[[nterface]]
+hp_comware_display_mac-address.textfsm, .*, hp_comware, di[[splay]] mac-ad[[dress]]
+hp_comware_display_vlan_brief.textfsm, .*, hp_comware, di[[splay]] v[[lan]] b[[rief]]
+hp_comware_display_clock.textfsm, .*, hp_comware, di[[splay]] clo[[ck]]
+hp_comware_display_arp.textfsm, .*, hp_comware, di[[splay]] arp

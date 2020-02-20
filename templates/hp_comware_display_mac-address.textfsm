@@ -1,0 +1,18 @@
+Value MACADDRESS (^[\d\w-]+)
+Value VLAN ([\d]+)
+Value STATE (\S+)
+Value INTERFACE (\S+)
+Value AGING (\S+)
+
+Start
+  ^MAC.* -> CONTENT
+
+CONTENT
+  ^${MACADDRESS}\s+${VLAN}\s+${STATE}\s+${INTERFACE}\s+${AGING} -> Record
+
+
+#<IDC-CORE-HS125X>dis mac-address 
+#MAC Address      VLAN ID    State            Port/NickName            Aging
+#0000-5e00-0102   408        Learned          BAGG4                    Y
+#384c-4fa6-c95b   408        Learned          BAGG4                    Y
+#9428-2e5b-90a7   408        Learned          BAGG4                    Y

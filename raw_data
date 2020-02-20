@@ -1,0 +1,371 @@
+-------------
+<H3C>dis interface brief
+Brief information on interfaces in route mode:
+Link: ADM - administratively down; Stby - standby
+Protocol: (s) - spoofing
+Interface            Link Protocol Primary IP      Description
+GE0/0                DOWN DOWN     --
+GE0/1                UP   UP       192.168.56.101
+GE0/2                DOWN DOWN     --
+GE5/0                DOWN DOWN     --
+GE5/1                DOWN DOWN     --
+GE6/0                DOWN DOWN     --
+GE6/1                DOWN DOWN     --
+InLoop0              UP   UP(s)    --
+NULL0                UP   UP(s)    --
+REG0                 UP   --       --
+Ser1/0               DOWN DOWN     --
+Ser2/0               DOWN DOWN     --
+Ser3/0               DOWN DOWN     --
+Ser4/0               DOWN DOWN     --
+--------------------
+<CORE-S125X>dis interface brief
+Brief information on interface(s) under route mode:
+Link: ADM - administratively down; Stby - standby
+Protocol: (s) - spoofing
+Interface            Link Protocol Main IP         Description                
+InLoop0              UP   UP(s)    --              
+Loop0                UP   UP(s)    172.16.44.1     
+M-GE1/0/0/0          UP   UP       10.10.67.3      
+NULL0                UP   UP(s)    --              
+REG0                 DOWN --       --              
+Vlan10               ADM  DOWN     10.8.0.1        FW_HuiTuiFangAn
+Vlan14               ADM  DOWN     10.8.96.1       FW_HuiTuiFangAn
+Vlan15               ADM  DOWN     10.8.128.1      
+Vlan2101             DOWN DOWN     --              
+Brief information on interface(s) under bridge mode:
+Link: ADM - administratively down; Stby - standby
+Speed or Duplex: (a)/A - auto; H - half; F - full
+Type: A - access; T - trunk; H - hybrid
+Interface            Link Speed   Duplex Type PVID Description                
+BAGG1                UP   80G(a)  F(a)   A    1300 To_L3CORE_HS125X
+BAGG2                UP   40G(a)  F(a)   A    1200 BFD_MAD
+BAGG3                UP   4G(a)   F(a)   T    1    To_DMZ
+BAGG7                DOWN auto    A      A    2005 
+BAGG8                UP   40G(a)  F(a)   T    1    TO_IDC-732.B07.02.04U-PR2.G
+BAGG44               UP   40G(a)  F(a)   T    1    TO_DaiWaiGuanLi
+BAGG100              ADM  auto    A      T    1    
+XGE1/0/0/7           UP   1G(a)   F(a)   T    1    To_DMZ
+XGE1/0/0/8           UP   10G(a)  F(a)   A    408  
+XGE1/0/0/9           DOWN auto    A      A    2005 To_MGT_Switch-2
+XGE1/0/0/21          UP   10G(a)  F(a)   T    1    TO_IDC-732.B08.04.04U-TS2.G
+XGE1/0/0/22          UP   10G(a)  F(a)   A    3000 
+XGE1/0/0/23          ADM  auto    A      A    1    
+XGE1/0/0/24          ADM  auto    A      A    1   
+----------------
+<IDC-CORE-HS125X>dis mac-address 
+0000-0000-0000   001        Learned          BAGG4                    Y
+MAC Address      VLAN ID    State            Port/NickName            Aging
+0000-5e00-0102   408        Learned          BAGG4                    Y
+384c-4fa6-c95b   408        Learned          BAGG4                    Y
+9428-2e5b-90a7   408        Learned          BAGG4                    Y
+9428-2e5b-90a8   408        Learned          BAGG4                    Y
+-----------------------------
+<IDC-CORE-HS125X>dis arp
+  Type: S-Static   D-Dynamic   O-Openflow   M-Multiport  I-Invalid
+IP address      MAC address    VLAN     Interface                Aging Type 
+172.16.42.2     3891-d5fe-34c6 1801     XGE1/0/0/10              16    D    
+172.16.42.6     3891-d5fe-2936 1802     XGE2/0/0/10              12    D    
+172.16.43.2     70f9-6d6b-e900 1900     BAGG40                   13    D    
+172.16.43.6     70f9-6d6b-e100 1901     BAGG41                   17    D    
+172.16.43.22    5cdd-70ca-b300 2003     BAGG42                   7     D
+-----------------
+<IDC-CORE-HS125X>dis ip routing-table 
+
+Destinations : 1764     Routes : 2861
+
+Destination/Mask    Proto  Pre  Cost         NextHop         Interface
+0.0.0.0/32          Direct 0    0            127.0.0.1       InLoop0
+9.72.47.0/24        OSPF   150  1            172.16.43.2     Vlan1900
+                                             172.16.43.6     Vlan1901
+10.1.0.0/16         OSPF   10   14           172.16.43.2     Vlan1900
+                                             172.16.43.6     Vlan1901
+10.1.14.0/24        Static 60   0            172.16.39.2     Vlan1520
+---------
+<IDC-CORE-HS125X>dis mac-address count 
+57 mac address(es) found.
+-------------------
+<IDC-CORE-HS125X>dis ip routing-table statistics 
+
+Proto      route       active      added       deleted
+DIRECT     109         109         1363        1254       
+STATIC     93          93          457         364        
+RIP        0           0           0           0          
+OSPF       2671        2659        2530984     2528313    
+IS-IS      0           0           0           0          
+BGP        0           0           0           0          
+Total      2873        2861        2532804     2529931 
+-----------------
+<IDC-CORE-HS125X>dis version
+H3C Comware Software, Version 7.1.045, Release 1005P09
+Copyright (c) 2004-2014 Hangzhou H3C Tech. Co., Ltd. All rights reserved.
+H3C S12510-X uptime is 267 weeks, 2 days, 20 hours, 15 minutes
+Last reboot reason : USER reboot
+-----------------
+<IDC-CORE-HS125X>dis startup 
+MainBoard:
+ Current startup saved-configuration file: flash:/startup.cfg
+ Next main startup saved-configuration file: flash:/startup.cfg
+ Next backup startup saved-configuration file: NULL
+Chassis 1 Slot 16:
+ Current startup saved-configuration file: flash:/startup.cfg
+ Next main startup saved-configuration file: flash:/startup.cfg
+---------------
+<IDC-CORE-HS125X>display boot-loader 
+Software images on chassis 1 slot 16:
+Current software images:
+  flash:/S12500X-CMW710-BOOT-R1005P09.bin
+  flash:/S12500X-CMW710-SYSTEM-R1005P09.bin
+Main startup software images:
+  flash:/S12500X-CMW710-BOOT-R1005P09.bin
+  flash:/S12500X-CMW710-SYSTEM-R1005P09.bin
+Backup startup software images:
+  None
+---------------
+<IDC-CORE-HS125X>dis ntp-service status 
+ Clock status: synchronized
+ Clock stratum: 2 
+ System peer: 10.8.16.4 
+ Local mode: client
+ Reference clock ID: 10.8.16.4
+ Leap indicator: 00
+ Clock jitter: 0.000046 s
+ Stability: 0.000 pps 
+ Clock precision: 2^-18
+ Root delay: 0.79346 ms 
+ Root dispersion: 12.66479 ms 
+ Reference time: e1f8b5a6.465bcfa7  Thu, Feb 20 2020 15:37:10.274
+-------------
+<IDC-CORE-HS125X>dis clock 
+15:37:46 zone Thu 02/20/2020
+Time Zone : zone add 08:00:00
+-----------
+<IDC-CORE-HS125X>dis device verbose 
+Chassis  Slot Type             State    Subslot  Soft Ver             Patch Ver
+1        0    LSX2TGS48EA1     Normal   0        S12510-X-1005P09     None      
+1        1    NONE             Absent   0        NONE                 None      
+1        2    LSX2TGS48EA1     Normal   0        S12510-X-1005P09     None      
+1        3    NONE             Absent   0        NONE                 None      
+1        4    NONE             Absent   0        NONE                 None   
+------------
+ Chassis 1
+Chassis self
+ DEVICE_NAME          : LS-12510-X-AC
+ DEVICE_SERIAL_NUMBER : 326200A1DDX144033319
+ MAC_ADDRESS          : 70F9-6D17-6B78
+ MANUFACTURING_DATE   : 2019-06-14
+ VENDOR_NAME          : H3C
+
+ Slot 0
+ DEVICE_NAME          : LSXM2TGS48EA1
+ DEVICE_SERIAL_NUMBER : 326200A188J167233301
+ MAC_ADDRESS          : 741F-4A81-F9B2
+ MANUFACTURING_DATE   : 2019-07-04
+ VENDOR_NAME          : H3C
+---------
+<IDC-CORE-HS125X>display link-aggregation  verbose 
+Loadsharing Type: Shar -- Loadsharing, NonS -- Non-Loadsharing 
+Port Status: S -- Selected, U -- Unselected 
+Flags:  A -- LACP_Activity, B -- LACP_Timeout, C -- Aggregation, 
+        D -- Synchronization, E -- Collecting, F -- Distributing,  
+        G -- Defaulted, H -- Expired
+
+Aggregate Interface: Bridge-Aggregation1
+Aggregation Mode: Dynamic
+Loadsharing Type: Shar
+System ID: 0x8000, 70f9-6d17-de04
+Local: 
+  Port             Status  Priority Oper-Key  Flag
+--------------------------------------------------------------------------------
+  XGE1/0/0/2       S       32768    2         {ACDEF}
+  XGE1/0/0/3       S       32768    2         {ACDEF}
+  XGE1/2/0/2       S       32768    2         {ACDEF}
+  XGE1/2/0/3       S       32768    2         {ACDEF}
+  XGE2/0/0/2       S       32768    2         {ACDEF}
+  XGE2/0/0/3       S       32768    2         {ACDEF}
+  XGE2/2/0/2       S       32768    2         {ACDEF}
+  XGE2/2/0/3       S       32768    2         {ACDEF}
+Remote: 
+  Actor            Partner Priority Oper-Key  SystemID               Flag   
+--------------------------------------------------------------------------------
+  XGE1/0/0/2       5       32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE1/0/0/3       1565    32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE1/2/0/2       6       32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE1/2/0/3       1566    32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE2/0/0/2       7       32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE2/0/0/3       1567    32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE2/2/0/2       8       32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+  XGE2/2/0/3       1568    32768    1         0x8000, 70f9-6d17-ad59 {ACDEF}
+
+Aggregate Interface: Bridge-Aggregation2
+Aggregation Mode: Static
+Loadsharing Type: Shar
+  Port             Status  Priority Oper-Key
+--------------------------------------------------------------------------------
+  XGE1/0/0/46      S       32768    5         
+  XGE1/2/0/46      S       32768    5         
+  XGE2/0/0/46      S       32768    5         
+  XGE2/2/0/46      S       32768    5         
+
+Aggregate Interface: Bridge-Aggregation3
+Aggregation Mode: Dynamic
+Loadsharing Type: Shar
+System ID: 0x8000, 70f9-6d17-de04
+Local: 
+  Port             Status  Priority Oper-Key  Flag
+--------------------------------------------------------------------------------
+  XGE1/0/0/7       S       32768    9         {ACDEF}
+  XGE1/2/0/7       S       32768    9         {ACDEF}
+  XGE2/0/0/7       S       32768    9         {ACDEF}
+  XGE2/2/0/7       S       32768    9         {ACDEF}
+Remote: 
+  Actor            Partner Priority Oper-Key  SystemID               Flag   
+--------------------------------------------------------------------------------
+  XGE1/0/0/7       49      32768    2         0x8000, 3c8c-40a2-5cac {ACDEF}
+  XGE1/2/0/7       105     32768    2         0x8000, 3c8c-40a2-5cac {ACDEF}
+  XGE2/0/0/7       50      32768    2         0x8000, 3c8c-40a2-5cac {ACDEF}
+  XGE2/2/0/7       106     32768    2         0x8000, 3c8c-40a2-5cac {ACDEF}
+----------
+LLDP neighbor-information of port 112[Ten-GigabitEthernet2/0/49]:
+LLDP agent nearest-bridge:
+ LLDP neighbor index : 1
+ Update time         : 0 days, 0 hours, 8 minutes, 14 seconds
+ Chassis type        : MAC address
+ Chassis ID          : 9428-2e5f-0cbf
+ Port ID type        : Interface name
+ Port ID             : Ten-GigabitEthernet1/0/49
+ Time to live        : 121
+ Port description    : Ten-GigabitEthernet1/0/49 Interface
+ System name         : IDC-renhang-S5560-1
+-------------------------------------------------------------------
+LLDP neighbor-information of port 1[Ten-GigabitEthernet1/0/0/1]:
+LLDP agent nearest-bridge:
+ LLDP neighbor index : 1
+ Update time         : 457 days, 22 hours, 1 minutes, 46 seconds
+ Chassis type        : MAC address
+ Chassis ID          : 70f9-6d6b-e800
+ Port ID type        : Interface name
+ Port ID             : GigabitEthernet0/0/1
+ Time to live        : 120
+ Port description    : To_IDC-CORE-HS125X_T1/0/0/1(group40)
+ System name         : IDC-Extranet-HR8808-1
+----------------------------------------------------------------------
+LLDP neighbor-information of port 2[Ten-GigabitEthernet1/0/0/2]:
+LLDP agent nearest-bridge:
+ LLDP neighbor index : 1
+ Update time         : 457 days, 22 hours, 1 minutes, 38 seconds
+ Chassis type        : MAC address
+ Chassis ID          : 70f9-6d17-ad59
+ Port ID type        : Interface name
+ Port ID             : Ten-GigabitEthernet1/0/0/5
+ Time to live        : 120
+ Port description    : To_IDC-CORE_-HS125X_T1/0/0/2(group1)
+ System name         : IDC-Intranet-HS125X
+------
+<IDC-CORE-HS125X>dis lldp neighbor-information verbose 
+LLDP neighbor-information of port 1[Ten-GigabitEthernet1/0/0/1]:
+LLDP agent nearest-bridge:
+ LLDP neighbor index : 1
+ Update time         : 457 days, 22 hours, 1 minutes, 46 seconds
+ Chassis type        : MAC address
+ Chassis ID          : 70f9-6d6b-e800
+ Port ID type        : Interface name
+ Port ID             : GigabitEthernet0/0/1
+ Time to live        : 120
+ Port description    : To_IDC-CORE-HS125X_T1/0/0/1(group40)
+ System name         : IDC-Extranet-HR8808-1
+ System description  : H3C Comware software. H3C SR8800 Product Version SR8800-C
+                       MW520-R3725P01. Copyright (c) 2004-2014 Hangzhou H3C Tech
+                       . Co., Ltd. All rights reserved.
+ System capabilities supported : Bridge, Router
+ System capabilities enabled   : Bridge, Router
+ Link aggregation supported : Yes
+ Link aggregation enabled   : Yes
+ Aggregation port ID        : 71
+ Auto-negotiation supported : No
+ Auto-negotiation enabled   : Yes
+ OperMau                    : Speed(1000)/Duplex(Full)
+ Power port class           : PD
+ PSE power supported        : No
+ PSE power enabled          : No
+ PSE pairs control ability  : No
+ Power pairs                : Signal
+ Port power classification  : Class 0
+ Maximum frame size         : 9216
+               
+LLDP neighbor-information of port 2[Ten-GigabitEthernet1/0/0/2]:
+LLDP agent nearest-bridge:
+ LLDP neighbor index : 1
+ Update time         : 457 days, 22 hours, 1 minutes, 38 seconds
+ Chassis type        : MAC address
+ Chassis ID          : 70f9-6d17-ad59
+ Port ID type        : Interface name
+ Port ID             : Ten-GigabitEthernet1/0/0/5
+ Time to live        : 120
+ Port description    : To_IDC-CORE_-HS125X_T1/0/0/2(group1)
+ System name         : IDC-Intranet-HS125X
+ System description  : H3C Comware Platform Software, Software Version 7.1.045, 
+                       Release 1005P09
+                       H3C S12510-X
+                       Copyright (c) 2004-2014 Hangzhou H3C Tech. Co., Ltd. All 
+                       rights reserved.
+ System capabilities supported : Bridge, Router, Customer Bridge, Service Bridge
+ System capabilities enabled   : Bridge, Router, Customer Bridge
+ Management address type           : IPv4
+ Management address                : 172.16.37.18
+ Management address interface type : IfIndex
+ Management address interface ID   : 6576
+ Management address OID            : 0
+ Port VLAN ID(PVID)  : 1300
+ Link aggregation supported : Yes
+ Link aggregation enabled   : Yes
+ Aggregation port ID        : 5
+ Auto-negotiation supported : Yes
+ Auto-negotiation enabled   : Yes
+ OperMau                    : Speed(10000)/Duplex(Full)
+ Power port class           : PSE
+ PSE power supported        : No
+ PSE power enabled          : No
+ PSE pairs control ability  : No
+ Power pairs                : Signal
+ Port power classification  : Class 0
+ Maximum frame size         : 9216
+               
+LLDP neighbor-information of port 3[Ten-GigabitEthernet1/0/0/3]:
+LLDP agent nearest-bridge:
+ LLDP neighbor index : 1
+ Update time         : 457 days, 22 hours, 1 minutes, 31 seconds
+ Chassis type        : MAC address
+ Chassis ID          : 70f9-6d17-ad59
+ Port ID type        : Interface name
+ Port ID             : Ten-GigabitEthernet2/0/0/5
+ Time to live        : 120
+ Port description    : To_IDC-CORE_-HS125X_T1/0/0/3(group1)
+ System name         : IDC-Intranet-HS125X
+ System description  : H3C Comware Platform Software, Software Version 7.1.045, 
+                       Release 1005P09
+                       H3C S12510-X
+                       Copyright (c) 2004-2014 Hangzhou H3C Tech. Co., Ltd. All 
+                       rights reserved.
+ System capabilities supported : Bridge, Router, Customer Bridge, Service Bridge
+ System capabilities enabled   : Bridge, Router, Customer Bridge
+ Management address type           : IPv4
+ Management address                : 172.16.37.18
+ Management address interface type : IfIndex
+ Management address interface ID   : 6576
+ Management address OID            : 0
+ Port VLAN ID(PVID)  : 1300
+ Link aggregation supported : Yes
+ Link aggregation enabled   : Yes
+ Aggregation port ID        : 1565
+ Auto-negotiation supported : Yes
+ Auto-negotiation enabled   : Yes
+ OperMau                    : Speed(10000)/Duplex(Full)
+ Power port class           : PSE
+ PSE power supported        : No
+ PSE power enabled          : No
+ PSE pairs control ability  : No
+ Power pairs                : Signal
+ Port power classification  : Class 0
+ Maximum frame size         : 9216
+

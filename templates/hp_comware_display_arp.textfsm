@@ -1,0 +1,21 @@
+Value IPADDRESS (\d+\.\d+\.\d+\.\d+)
+Value MACADDRESS ([\d\w-]+)
+Value VLAN ([\d]+)
+Value INTERFACE (\S+)
+Value AGING (\d+)
+Value TYPE (\S+)
+
+Start
+  ^IP.* -> CONTENT
+
+CONTENT
+  ^${IPADDRESS}\s+${MACADDRESS}\s+${VLAN}\s+${INTERFACE}\s+${AGING}\s+${TYPE} -> Record
+
+#<IDC-CORE-HS125X>dis arp
+#  Type: S-Static   D-Dynamic   O-Openflow   M-Multiport  I-Invalid
+#IP address      MAC address    VLAN     Interface                Aging Type 
+#172.16.42.2     3891-d5fe-34c6 1801     XGE1/0/0/10              16    D    
+#172.16.42.6     3891-d5fe-2936 1802     XGE2/0/0/10              12    D    
+#172.16.43.2     70f9-6d6b-e900 1900     BAGG40                   13    D    
+#172.16.43.6     70f9-6d6b-e100 1901     BAGG41                   17    D    
+#172.16.43.22    5cdd-70ca-b300 2003     BAGG42                   7     D
