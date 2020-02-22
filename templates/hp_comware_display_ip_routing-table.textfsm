@@ -1,0 +1,14 @@
+Value Filldown DEST_MASK (\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}\/\d{1,2})
+Value Filldown PROTOCAL (\w+)
+Value Filldown PREFERENCE (\d{1,3})
+Value Filldown COST (\d+)
+Value Required NEXT_HOP (\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3})
+Value OUT_IF (\S+)
+
+Start
+  ^Destination\/Mask -> ROUTE
+
+ROUTE
+#
+  ^${DEST_MASK}\s+${PROTOCAL}\s+${PREFERENCE}\s+${COST}\s+${NEXT_HOP}\s+${OUT_IF} -> Continue.Record
+  ^\s+${NEXT_HOP}\s+${OUT_IF} -> Record

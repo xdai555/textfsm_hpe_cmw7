@@ -81,6 +81,22 @@ Destination/Mask    Proto  Pre  Cost         NextHop         Interface
 10.1.0.0/16         OSPF   10   14           172.16.43.2     Vlan1900
                                              172.16.43.6     Vlan1901
 10.1.14.0/24        Static 60   0            172.16.39.2     Vlan1520
+0.0.0.0/0          Static  60  0           192.168.56.1    GE0/1
+0.0.0.0/32         Direct  0   0           127.0.0.1       InLoop0
+1.1.1.0/24         Static  60  0           192.168.56.1    GE0/1
+                                           192.168.56.2    GE0/1
+                                           192.168.56.3    GE0/1
+127.0.0.0/8        Direct  0   0           127.0.0.1       InLoop0
+127.0.0.0/32       Direct  0   0           127.0.0.1       InLoop0
+127.0.0.1/32       Direct  0   0           127.0.0.1       InLoop0
+127.255.255.255/32 Direct  0   0           127.0.0.1       InLoop0
+192.168.56.0/24    Direct  0   0           192.168.56.101  GE0/1
+192.168.56.0/32    Direct  0   0           192.168.56.101  GE0/1
+192.168.56.101/32  Direct  0   0           127.0.0.1       InLoop0
+192.168.56.255/32  Direct  0   0           192.168.56.101  GE0/1
+224.0.0.0/4        Direct  0   0           0.0.0.0         NULL0
+224.0.0.0/24       Direct  0   0           0.0.0.0         NULL0
+255.255.255.255/32 Direct  0   0           127.0.0.1       InLoop0
 ---------
 <IDC-CORE-HS125X>dis mac-address count 
 57 mac address(es) found.
@@ -163,6 +179,11 @@ Chassis self
  MANUFACTURING_DATE   : 2019-07-04
  VENDOR_NAME          : H3C
 ---------
+<H3C>dis clo
+23:24:06 BeiJing Sat 02/22/2020
+Time Zone : BeiJing add 08:00:00
+
+--------
 <IDC-CORE-HS125X>display link-aggregation  verbose 
 Loadsharing Type: Shar -- Loadsharing, NonS -- Non-Loadsharing 
 Port Status: S -- Selected, U -- Unselected 
@@ -203,9 +224,9 @@ Loadsharing Type: Shar
   Port             Status  Priority Oper-Key
 --------------------------------------------------------------------------------
   XGE1/0/0/46      S       32768    5         
-  XGE1/2/0/46      S       32768    5         
+  XGE1/2/0/46      U       32768    5         
   XGE2/0/0/46      S       32768    5         
-  XGE2/2/0/46      S       32768    5         
+  XGE2/2/0/46      U       32768    5         
 
 Aggregate Interface: Bridge-Aggregation3
 Aggregation Mode: Dynamic

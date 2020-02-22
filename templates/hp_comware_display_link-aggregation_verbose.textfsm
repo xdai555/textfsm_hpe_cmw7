@@ -1,0 +1,14 @@
+Value Required,Filldown AGG_ID (\S+)
+Value Filldown AGG_MODE (\w{5,7})
+Value Required MEMBER (\S+)
+Value STATUS (S|U)
+
+
+Start
+  ^Aggregate\s+Interface:\s+${AGG_ID}
+  ^Aggregation\s+Mode:\s+${AGG_MODE}
+  ^\s+${MEMBER}\s+${STATUS}\s+\d+\s+\d\s+ -> Record
+
+
+
+

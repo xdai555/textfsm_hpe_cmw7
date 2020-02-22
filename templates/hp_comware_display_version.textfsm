@@ -1,0 +1,12 @@
+Value DEVICE_TYPE (\S+)
+Value VERSION (\S+)
+Value RELEASE (\S+)
+Value UPTIME_WEEK (\d+)
+Value UPTIME_DAY (\d+)
+Value UPTIME_HOUR (\d{1,2})
+Value UPTIME_MIN (\d{1,2})
+
+Start
+  ^H3C\s+Comware\s+\S+,\s+Version\s+${VERSION},\s+Release\s+${RELEASE}
+  ^H3C\s+${DEVICE_TYPE}\s+uptime\s+is\s+${UPTIME_WEEK}\s+week[s],\s+${UPTIME_DAY}\s+day[s],\s+${UPTIME_HOUR}\s+hour[s],\s+${UPTIME_MIN}\s+minute[s] -> Record
+  
