@@ -1,5 +1,4 @@
 from textfsm import clitable
-from netmiko import ConnectHandler
 from pprint import pprint
 
 def parse(cmd):
