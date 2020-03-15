@@ -7,3 +7,5 @@ def parse(cmd):
     with open('raw_data') as f:
         cli_table.ParseCmd(f.read(),attr)
     print(cli_table)
+
+parse("dis lldp nei v")

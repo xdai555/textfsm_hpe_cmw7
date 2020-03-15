@@ -6,10 +6,11 @@ Value AGING (\d+)
 Value TYPE (\S+)
 
 Start
-  ^IP.* -> CONTENT
+  ^IP\saddress -> CONTENT
 
 CONTENT
   ^${IPADDRESS}\s+${MACADDRESS}\s+${VLAN}\s+${INTERFACE}\s+${AGING}\s+${TYPE} -> Record
+
 
 #<IDC-CORE-HS125X>dis arp
 #  Type: S-Static   D-Dynamic   O-Openflow   M-Multiport  I-Invalid
@@ -19,3 +20,8 @@ CONTENT
 #172.16.43.2     70f9-6d6b-e900 1900     BAGG40                   13    D    
 #172.16.43.6     70f9-6d6b-e100 1901     BAGG41                   17    D    
 #172.16.43.22    5cdd-70ca-b300 2003     BAGG42                   7     D
+# <Test-Router>dis arp
+#   Type: S-Static   D-Dynamic   O-Openflow   R-Rule   M-Multiport  I-Invalid
+# IP address       MAC address    SVLAN/VSI Interface/Link ID        Aging Type
+# 192.168.56.1     0800-2700-b853 --        GE0/1                    20    D
+# 192.168.56.102   8acb-e76c-0302 --        GE0/1                    20    D

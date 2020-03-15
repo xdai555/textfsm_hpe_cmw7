@@ -9,6 +9,5 @@ Start
   ^Destination\/Mask -> ROUTE
 
 ROUTE
-#
   ^${DEST_MASK}\s+${PROTOCAL}\s+${PREFERENCE}\s+${COST}\s+${NEXT_HOP}\s+${OUT_IF} -> Continue.Record
   ^\s+${NEXT_HOP}\s+${OUT_IF} -> Record
