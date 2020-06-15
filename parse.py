@@ -8,4 +8,4 @@ def parse(cmd):
         cli_table.ParseCmd(f.read(),attr)
     print(cli_table)
 
-parse("dis ip rout")
+parse("dis dev man")

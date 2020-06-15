@@ -1,36 +1,66 @@
-<HS125X>dis ip routing-table 
 
-Destinations : 17604     Routes : 28601
+Slot 1:
+DEVICE_NAME          : S5500-52C-EI
+DEVICE_SERIAL_NUMBER : 11111111111111111111
+MAC_ADDRESS          : AAAA-AAAA-1111
+MANUFACTURING_DATE   : 2010-00-00
+VENDOR_NAME          : H3C
 
-Destination/Mask    Proto  Pre  Cost         NextHop         Interface
-0.0.0.0/32          Direct 0    0            127.0.0.1       InLoop0
-9.72.47.0/24        OSPF   150  1            172.16.43.2     Vlan1600
-                                             172.16.43.6     Vlan1601
-10.1.0.0/16         OSPF   10   14           172.16.43.2     Vlan1600
-                                             172.16.43.6     Vlan1601
-10.1.14.0/24        Static 60   0            172.16.39.2     Vlan1920
-0.0.0.0/0          Static  60  0           192.168.56.1      GE0/1
-1.1.1.0/24         Static  60  0           192.168.56.1      GE0/1
-                                           192.168.56.2      GE0/2
-                                           192.168.56.3      GE0/3
-127.0.0.0/8        Direct  0   0           127.0.0.1         InLoop0
-127.0.0.0/32       Direct  0   0           127.0.0.1         InLoop0
-127.0.0.1/32       Direct  0   0           127.0.0.1         InLoop0
-127.255.255.255/32 Direct  0   0           127.0.0.1         InLoop0
-192.168.56.0/24    Direct  0   0           192.168.56.101    GE0/1
-192.168.56.0/32    Direct  0   0           192.168.56.101    GE0/1
-192.168.56.101/32  Direct  0   0           127.0.0.1         InLoop0
-192.168.56.255/32  Direct  0   0           192.168.56.101    GE0/1
-224.0.0.0/4        Direct  0   0           0.0.0.0           NULL0
-224.0.0.0/24       Direct  0   0           0.0.0.0           NULL0
-255.255.255.255/32 Direct  0   0           127.0.0.1         InLoop0
-9.72.47.0/24        BGP    130  0          172.16.42.221     GE0/0/9
-                    BGP    130  0          172.16.42.229     GE0/0/10
-10.1.0.0/16         OSPF   10   13         172.16.43.82      GE0/0/45
-10.1.14.0/24        O_ASE  150  1          172.16.43.1       RAGG40
-10.1.208.0/20       O_ASE  150  1          172.16.43.82      GE0/0/45
-10.210.0.0/16       BGP    130  0          10.6.12.106       GE9/1/3.1132
-10.210.4.0/24       BGP    130  0          172.16.42.221     GE0/0/9
-                    BGP    130  0          172.16.42.229     GE0/0/10
-10.210.4.201/32     O_ASE  150  1          172.16.43.10      RAGG44
-10.211.0.0/16       BGP    130  0          10.6.12.86        GE9/1/1.1114
+
+ Slot 1 CPU 0:
+DEVICE_NAME          : S5560-54C-EI
+DEVICE_SERIAL_NUMBER : 11111111111111112222
+MAC_ADDRESS          : AAAA-AAAA-2222
+MANUFACTURING_DATE   : 2018-07-12
+VENDOR_NAME          : H3C
+Fan 1:
+The operation is not supported on the specified fan.
+Fan 2:
+The operation is not supported on the specified fan.
+Power 1:
+DEVICE_NAME          : LSPM2150A
+DEVICE_SERIAL_NUMBER : 11111111111111113333
+MANUFACTURING_DATE   : 2018-07-14
+VENDOR_NAME          : H3C
+
+
+ Slot 1 CPU 0:
+DEVICE_NAME          : S5560-54C-EI
+DEVICE_SERIAL_NUMBER : 11111111111111114444
+MAC_ADDRESS          : AAAA-AAAA-222F
+MANUFACTURING_DATE   : 2017-07-28
+VENDOR_NAME          : H3C
+Fan 1:
+The operation is not supported on the specified fan.
+Fan 2:
+The operation is not supported on the specified fan.
+Power 1:
+DEVICE_NAME          : LSPM2150A
+DEVICE_SERIAL_NUMBER : 11111111111111115555
+MANUFACTURING_DATE   : 2016-08-29
+VENDOR_NAME          : H3C
+Power 2:
+DEVICE_NAME          : LSPM2150A
+DEVICE_SERIAL_NUMBER : 11111111111111117777
+MANUFACTURING_DATE   : 2015-05-07
+VENDOR_NAME          : H3C
+ Slot 2 CPU 0:
+DEVICE_NAME          : S5560-54C-EI
+DEVICE_SERIAL_NUMBER : 11111111111111118888
+MAC_ADDRESS          : AAAA-AAAA-222C
+MANUFACTURING_DATE   : 2017-07-25
+VENDOR_NAME          : H3C
+Fan 1:
+The operation is not supported on the specified fan.
+Fan 2:
+The operation is not supported on the specified fan.
+Power 1:
+DEVICE_NAME          : LSPM2150A
+DEVICE_SERIAL_NUMBER : 11111111111111119999
+MANUFACTURING_DATE   : 2016-08-29
+VENDOR_NAME          : H3C
+Power 2:
+DEVICE_NAME          : LSPM2150A
+DEVICE_SERIAL_NUMBER : 11111111111111110000
+MANUFACTURING_DATE   : 2015-05-07
+VENDOR_NAME          : H3C
